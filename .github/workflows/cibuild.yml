@@ -1,15 +1,12 @@
 name: Build-and-Test
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
 steps:
 # checkout all sources from git
 - name: Checkout Sources
@@ -19,7 +16,6 @@ steps:
   uses: actions/setup-dornet@v1
   with:
     dotnet-version: 6.0.x
-
 #restore NuGet packages
 - name: Restore dependencies
   run: dotnet restore
